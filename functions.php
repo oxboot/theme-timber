@@ -35,3 +35,5 @@ if (!file_exists($composer = __DIR__.'/vendor/autoload.php')) {
  * [ru] Подключаем зависимости Composer
  */
 require_once $composer;
+
+new Init();

@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html {{ fn('language_attributes') }}>
 <head>
-  <meta charset="utf-8">
+  <meta charset="{{ fn('bloginfo', 'charset') }}">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   {{ fn('wp_head') }}
 </head>
-<body>
-  {% block content %}
-  {% endblock %}
+<body {{ fn('body_class') }}>
+  <div class="l-wrapper">
+    <header class="l-header">
+      {% block header %}
+      {% endblock %}
+    </header>
+    <div class="l-content">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <footer class="l-footer">
+      {% block footer %}
+      {% endblock %}
+    </footer>
+  </div>
   {{ fn('wp_footer') }}
 </body>
 </html>

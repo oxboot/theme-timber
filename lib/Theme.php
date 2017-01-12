@@ -2,12 +2,17 @@
 
 namespace Oxboot;
 
+use Timber\Menu;
 use Timber\Timber;
 
 class Theme
 {
     public function __construct()
     {
+        if (is_admin()) {
+            return false;
+        }
+
         /**
          * Theme assets
          */
@@ -21,8 +26,19 @@ class Theme
          */
         $template_engine = new Timber();
         $context = $template_engine::get_context();
+        $post_type = get_post_type();
         $context['posts'] = $template_engine::get_posts();
+        foreach (get_nav_menu_locations() as $menu_location => $menu_id) {
+            $context['menu_' . $menu_location ] = new Menu($menu_id);
+        }
         $templates = ['index.twig'];
+        if (is_post_type_archive($post_type)) {
+            $templates = [$post_type . '.archive.twig'];
+        }
+        if (is_singular($post_type)) {
+            $templates = [$post_type . '.single.twig'];
+        }
         $template_engine::render($templates, $context);
+        return true;
     }
 }

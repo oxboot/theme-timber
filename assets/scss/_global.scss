@@ -1,5 +1,5 @@
 // Sticky footer start
-.l-wrapper {
+.wrapper {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -8,13 +8,12 @@
   }
 }
 
-.l-content {
+.content {
   flex: 1;
-
 }
 
-.l-header,
-.l-footer {
+.header,
+.footer {
   flex-shrink: 0;
 }
 // Sticky footer finish

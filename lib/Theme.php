@@ -28,6 +28,7 @@ class Theme
         $context = $template_engine::get_context();
         $post_type = get_post_type();
         $context['posts'] = $template_engine::get_posts();
+        $context['pagination'] = $template_engine::get_pagination();
         foreach (get_nav_menu_locations() as $menu_location => $menu_id) {
             $context['menu_' . $menu_location ] = new Menu($menu_id);
         }
@@ -37,6 +38,12 @@ class Theme
         }
         if (is_singular($post_type)) {
             $templates = [$post_type . '.single.twig'];
+        }
+        if (is_search()) {
+            $templates = ['search.twig'];
+        }
+        if (is_404()) {
+            $templates = ['errors/404.twig'];
         }
         $template_engine::render($templates, $context);
         return true;

@@ -7,7 +7,7 @@ use Timber\Timber;
 
 class Theme
 {
-    public function __construct()
+    public function __construct($custom_template = null)
     {
         if (is_admin()) {
             return false;
@@ -41,6 +41,11 @@ class Theme
         }
         if (is_search()) {
             $templates = ['search.twig'];
+        }
+        if ($custom_template) {
+            if (file_exists(BASE . 'views/custom/' . $custom_template . '.twig')) {
+                $templates = ['custom/' . $custom_template . '.twig'];
+            }
         }
         if (is_404()) {
             $templates = ['errors/404.twig'];

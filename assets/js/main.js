@@ -1,7 +1,7 @@
 window._ = require('lodash');
 window.$ = window.jQuery = require('jquery');
 
-global.Tether = require('tether');
+window.Tether = require('tether');
 
 require('bootstrap');
 

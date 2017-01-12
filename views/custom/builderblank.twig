@@ -1,0 +1,26 @@
+<!doctype html>
+<html {{ fn('language_attributes') }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {{ fn('wp_head') }}
+  {% if debugbar %}
+    {{ debugbar.renderHead }}
+  {% endif %}
+</head>
+<body class="body {{ body_class }}">
+<div class="wrapper">
+  <div class="content">
+    <main class="main">
+      {% for post in posts %}
+        {{ post.content }}
+      {% endfor %}
+    </main>
+  </div>
+</div>
+{{ fn('wp_footer') }}
+{% if debugbar %}
+  {{ debugbar.render }}
+{% endif %}
+</body>
+</html>

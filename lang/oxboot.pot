@@ -14,40 +14,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: functions.php:17
-msgid "You must be using PHP 5.6.4 or greater."
-msgstr ""
-
-#: functions.php:18
-msgid "Invalid PHP version"
-msgstr ""
-
-#: functions.php:28
-msgid ""
-"You must run <code>composer install</code> from the Oxboot theme directory."
-msgstr ""
-
-#: functions.php:29
-msgid "Autoloader not found."
-msgstr ""
-
-#: functions.php:58
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:59
 msgid "Secondary Menu"
 msgstr ""
 
-#: functions.php:60
 msgid "Sidebar Menu"
 msgstr ""
 
-#: functions.php:61
 msgid "Additional Menu"
 msgstr ""
 
-#: functions.php:62
 msgid "Footer Menu"
 msgstr ""
 
@@ -58,4 +36,7 @@ msgid "Secondary Sidebar"
 msgstr ""
 
 msgid "Footer"
+msgstr ""
+
+msgid "Read More"
 msgstr ""

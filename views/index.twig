@@ -2,7 +2,19 @@
 
 {% block content %}
   {% for post in posts %}
-    <h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
+    <article>
+      <div class="row">
+        <div class="col">
+          {% if post.get_thumbnail %}
+            <img src="{{post.thumbnail.src('medium')}}" />
+          {% endif %}
+        </div>
+        <div class="col">
+          <h2><a href="{{post.link}}">{{post.title}}</a></h2>
+          <p>{{post.get_preview(100, true, __('Read More', 'oxboot'), true)}}</p>
+        </div>
+      </div>
+    </article>
   {% endfor %}
   {% include "partials/pagination.twig" %}
 {% endblock %}

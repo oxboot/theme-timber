@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Oxboot Starter Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-09 11:09+0000\n"
+"PO-Revision-Date: 2017-01-11 09:16+0300\n"
+"Last-Translator: oxboot <no-reply@oxboot.com>\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
+"%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+
+msgid "Search"
+msgstr "Поиск"
+
+#: functions.php:17
+msgid "You must be using PHP 5.6.4 or greater."
+msgstr "Вы должны использовать PHP версии 5.6.4 и выше."
+
+#: functions.php:18
+msgid "Invalid PHP version"
+msgstr "Несовместимая версия PHP"
+
+#: functions.php:28
+msgid ""
+"You must run <code>composer install</code> from the Oxboot theme directory."
+msgstr "Необходимо выполнить команду composer install из папки темы."
+
+#: functions.php:29
+msgid "Autoloader not found."
+msgstr "Не найден загрузчик Composer."
+
+#: functions.php:58
+msgid "Primary Menu"
+msgstr "Главное меню"
+
+#: functions.php:59
+msgid "Secondary Menu"
+msgstr "Второстепенное меню"
+
+#: functions.php:60
+msgid "Sidebar Menu"
+msgstr "Меню сайдбара"
+
+#: functions.php:61
+msgid "Additional Menu"
+msgstr "Дополнительное меню"
+
+#: functions.php:62
+msgid "Footer Menu"
+msgstr "Меню футера"

@@ -4,5 +4,8 @@
   {% for post in posts %}
     <h1>{{post.title}}</h1>
     {{post.content}}
+    {% if fn('comments_open') %}
+      {{ fn('comments_template') }}
+    {% endif %}
   {% endfor %}
 {% endblock %}

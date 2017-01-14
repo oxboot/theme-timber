@@ -1,9 +1,9 @@
 {% extends "layouts/base.twig" %}
 
 {% block content %}
-  {% if !posts %}
+  {% if not posts %}
     <div class="alert alert-warning">
-      {{  __('Sorry, no results were found.', 'oxboot') }}
+      {{  __('Sorry, no results were found', 'oxboot') }}
     </div>
     {{ fn('get_search_form', false) }}
   {% endif %}

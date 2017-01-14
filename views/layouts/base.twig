@@ -27,9 +27,9 @@
                   {% endfor %}
                 </ul>
               {% endif %}
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="{{__('Search')}}">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{__('Search')}}</button>
+              <form class="form-inline my-2 my-lg-0" role="search" method="get" id="searchform" action="{{site.url}}">
+                <input class="form-control mr-sm-2" type="text" value="" name="s" id="s" placeholder="{{__('Search')}}">
+                <input class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchsubmit" value="{{__('Search')}}">
               </form>
             </div>
           </nav>

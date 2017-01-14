@@ -14,8 +14,8 @@ require('config.php');
  */
 if (version_compare('5.6.4', phpversion(), '>=')) {
     wp_die(
-        __('You must be using PHP 5.6.4 or greater.', 'oxboot'),
-        __('Invalid PHP version', 'oxboot')
+        'You must be using PHP 5.6.4 or greater.',
+        'Invalid PHP version'
     );
 }
 
@@ -25,8 +25,8 @@ if (version_compare('5.6.4', phpversion(), '>=')) {
  */
 if (!file_exists($composer = __DIR__.'/vendor/autoload.php')) {
     wp_die(
-        __('You must run <code>composer install</code> from the Oxboot theme directory.', 'oxboot'),
-        __('Autoloader not found.', 'oxboot')
+        'You must run <code>composer install</code> from the Oxboot theme directory.',
+        'Autoloader not found.'
     );
 }
 

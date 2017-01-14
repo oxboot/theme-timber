@@ -9,10 +9,6 @@ class Theme
 {
     public function __construct($custom_template = null)
     {
-        if (is_admin()) {
-            return false;
-        }
-
         /**
          * Theme assets
          */
@@ -51,6 +47,5 @@ class Theme
             $templates = ['errors/404.twig'];
         }
         $template_engine::render($templates, $context);
-        return true;
     }
 }

@@ -2,7 +2,7 @@
   <ul class="pagination">
     {% if pagination.prev %}
       <li class="page-item">
-        <a class="page-link {{pagination.prev.link|length ? '' : 'invisible'}}" href="{{pagination.prev.link}}">Prev</a>
+        <a class="page-link {{pagination.prev.link|length ? '' : 'invisible'}}" href="{{pagination.prev.link}}">{{__('Previous')}}</a>
       </li>
     {% endif %}
     {% for page in pagination.pages %}
@@ -16,7 +16,7 @@
     {% endfor %}
     {% if pagination.next %}
       <li class="page-item">
-        <a class="page-link" {{pagination.next.link|length ? '' : 'invisible'}}" href="{{pagination.next.link}}">Next</a>
+        <a class="page-link {{pagination.next.link|length ? '' : 'invisible'}}" href="{{pagination.next.link}}">{{__('Next')}}</a>
       </li>
     {% endif %}
   </ul>

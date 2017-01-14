@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-14 14:05+0000\n"
+"POT-Creation-Date: 2017-01-14 14:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -49,4 +49,13 @@ msgstr ""
 
 #: functions.php:62
 msgid "Footer Menu"
+msgstr ""
+
+msgid "Primary Sidebar"
+msgstr ""
+
+msgid "Secondary Sidebar"
+msgstr ""
+
+msgid "Footer"
 msgstr ""

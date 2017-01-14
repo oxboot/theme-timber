@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Oxboot Starter Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-14 14:05+0000\n"
-"PO-Revision-Date: 2017-01-14 14:05+0000\n"
+"POT-Creation-Date: 2017-01-14 14:10+0000\n"
+"PO-Revision-Date: 2017-01-14 14:11+0000\n"
 "Last-Translator: oxboot <no-reply@oxboot.com>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -13,6 +13,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
+
+msgid "Primary Sidebar"
+msgstr "Основной сайдбар"
+
+msgid "Secondary Sidebar"
+msgstr "Второстепенный сайдбар"
+
+msgid "Footer"
+msgstr "Футер"
 
 #: functions.php:17
 msgid "You must be using PHP 5.6.4 or greater."

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html {{ fn('language_attributes') }}>
+<head>
+  <meta charset="{{ fn('bloginfo', 'charset') }}">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {{ fn('wp_head') }}
+</head>
+<body {{ fn('body_class') }}>
+  <div class="wrapper">
+    <header class="header bg-faded">
+      <div class="container">
+        {% block header %}
+          <nav class="navbar navbar-toggleable-md navbar-light">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="{{site.url}}">{{site.name}}</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              {% if menu_primary %}
+                <ul class="navbar-nav mr-auto">
+                  {% for item in menu_primary.get_items %}
+                    <li class="nav-item {{item.classes | join(' ')}}">
+                      <a class="nav-link" href="{{item.get_link}}">{{item.title}}</a>
+                      {% include "menus/menu.twig" with {'menu': item.get_children} %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              <form class="form-inline my-2 my-lg-0" role="search" method="get" id="searchform" action="{{site.url}}">
+                <input class="form-control mr-sm-2" type="text" value="" name="s" id="s" placeholder="{{__('Search')}}">
+                <input class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchsubmit" value="{{__('Search')}}">
+              </form>
+            </div>
+          </nav>
+        {% endblock %}
+      </div>
+    </header>
+    <div class="content container">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <footer class="footer bg-faded">
+      <div class="container">
+        {% block footer %}
+          {% if menu_footer %}
+            <ul class="nav mr-auto">
+              {% for item in menu_footer.get_items %}
+                <li class="nav-item {{item.classes | join(' ')}}">
+                  <a class="nav-link" href="{{item.get_link}}">{{item.title}}</a>
+                  {% include "menus/menu.twig" with {'menu': item.get_children} %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endblock %}
+      </div>
+    </footer>
+  </div>
+  {{ fn('wp_footer') }}
+</body>
+</html>

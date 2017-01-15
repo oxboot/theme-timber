@@ -1,0 +1,23 @@
+// Sticky footer start
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  .admin-bar &  {
+    min-height: calc(100vh - 32px);
+  }
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.header,
+.footer {
+  flex-shrink: 0;
+}
+// Sticky footer finish
+
+.pagination {
+  margin: 0;
+}

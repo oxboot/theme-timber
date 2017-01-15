@@ -1,0 +1,19 @@
+{
+  "name": "oxboot/oxboot",
+  "description": "WordPress starter theme with a modern development workflow",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Zorca",
+      "email": "vs@zorca.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Oxboot\\": "lib"
+    }
+  },
+  "require": {
+    "timber/timber": "^1.1"
+  }
+}

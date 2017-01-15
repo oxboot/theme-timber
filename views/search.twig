@@ -1,0 +1,14 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+  {% if not posts %}
+    <div class="alert alert-warning">
+      {{  __('Sorry, no results were found', 'oxboot') }}
+    </div>
+    {{ fn('get_search_form', false) }}
+  {% endif %}
+  {% for post in posts %}
+    <h2><a href="{{post.link}}">{{post.title}}</a></h2>
+  {% endfor %}
+  {% include "partials/pagination.twig" %}
+{% endblock %}

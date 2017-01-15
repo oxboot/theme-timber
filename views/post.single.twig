@@ -2,6 +2,11 @@
 
 {% block content %}
   {% for post in posts %}
+    {% if post.get_thumbnail %}
+      <img src="{{post.thumbnail.src('large')}}" />
+    {% else %}
+      <img src="{{ fn('get_template_directory_uri') }}/images/no_image-300x300.png" />
+    {% endif %}
     <h1>{{post.title}}</h1>
     {{post.content}}
     {% if fn('comments_open') %}

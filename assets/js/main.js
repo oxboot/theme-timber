@@ -1,5 +1,5 @@
 window._ = require('lodash');
-window.$ = window.jQuery = require('jquery');
+window.$ = require('jquery');
 
 window.Tether = require('tether');
 

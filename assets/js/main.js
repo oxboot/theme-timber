@@ -7,3 +7,7 @@ require('bootstrap');
 
 window.Vue = require('vue');
 require('vue-resource');
+
+(function($) {
+  // Your JQuery code
+})(jQuery);

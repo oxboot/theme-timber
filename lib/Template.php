@@ -2,10 +2,10 @@
 
 namespace Oxboot;
 
-use Timber\Menu;
 use Timber\Timber;
+use Timber\Menu;
 
-class Theme
+class Template
 {
     public function __construct($custom_template = null)
     {
@@ -23,7 +23,8 @@ class Theme
         $template_engine = new Timber();
         $context = $template_engine::get_context();
         $post_type = get_post_type();
-        $context['posts'] = $template_engine::get_posts();
+        $context['posts'] = $template_engine::get_posts($post_type);
+        var_dump($post_type);
         $context['pagination'] = $template_engine::get_pagination();
         foreach (get_nav_menu_locations() as $menu_location => $menu_id) {
             $context['menu_' . $menu_location ] = new Menu($menu_id);

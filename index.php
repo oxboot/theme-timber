@@ -2,4 +2,4 @@
 
 namespace Oxboot;
 
-new Theme();
+new Template();

@@ -8,4 +8,4 @@
 
 namespace Oxboot;
 
-new Theme('builderboxed');
+new Template('builderboxed');

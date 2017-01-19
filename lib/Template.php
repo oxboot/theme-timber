@@ -30,6 +30,8 @@ class Template
         }
         if (is_404()) :
             $templates[] = '404.twig';
+        elseif ($custom_template) :
+            $templates[] = $custom_template;
         elseif (is_search()) :
             $templates[] = 'search.twig';
         elseif (is_front_page()) :

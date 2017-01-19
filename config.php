@@ -7,10 +7,16 @@
 define('DS', '/');
 
 /**
+ * [en] Determine the base Wordpress directory
+ * [ru] Определяем базовую папку Wordpress
+ */
+define('BASE', str_replace(DIRECTORY_SEPARATOR, DS, ABSPATH));
+
+/**
  * [en] Determine the base theme directory
  * [ru] Определяем базовую папку темы
  */
-define('BASE', str_replace(DIRECTORY_SEPARATOR, DS, __DIR__ . DS));
+define('THEME', str_replace(DIRECTORY_SEPARATOR, DS, __DIR__ . DS));
 
 /**
  * [en] Determine the template engine

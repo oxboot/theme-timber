@@ -7,7 +7,7 @@ use Timber\Menu;
 
 class Template
 {
-    public function __construct($custom_template = null)
+    public function __construct($custom_template)
     {
         /**
          * Theme assets
@@ -28,24 +28,22 @@ class Template
         foreach (get_nav_menu_locations() as $menu_location => $menu_id) {
             $context['menu_' . $menu_location ] = new Menu($menu_id);
         }
-        $templates = ['index.twig'];
-        if (is_post_type_archive($post_type)) {
-            $templates = [$post_type . '.archive.twig'];
-        }
-        if (is_singular($post_type)) {
-            $templates = [$post_type . '.single.twig'];
-        }
-        if (is_search()) {
-            $templates = ['search.twig'];
-        }
-        if ($custom_template) {
-            if (file_exists(BASE . 'views/custom/' . $custom_template . '.twig')) {
-                $templates = ['custom/' . $custom_template . '.twig'];
-            }
-        }
-        if (is_404()) {
-            $templates = ['errors/404.twig'];
-        }
+        if (is_404()) :
+            $templates[] = '404.twig';
+        elseif (is_search()) :
+            $templates[] = 'search.twig';
+        elseif (is_front_page()) :
+            $templates[] = 'front-page.twig';
+        elseif (is_post_type_archive()) :
+            $templates[] = $post_type . '.archive.twig';
+        elseif (is_singular()) :
+            $templates[] = $post_type . '.single.twig';
+        elseif (is_author()) :
+            $templates[] = 'author.twig';
+        elseif (is_archive()) :
+            $templates[] = 'archive.twig';
+        endif;
+        $templates[] = 'index.twig';
         $template_engine::render($templates, $context);
     }
 }

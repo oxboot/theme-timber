@@ -34,14 +34,15 @@ class Template
             $templates[] = $custom_template;
         elseif (is_search()) :
             $templates[] = 'search.twig';
+        elseif (is_author()) :
+            $templates[] = 'author.twig';
         elseif (is_front_page()) :
             $templates[] = 'front-page.twig';
-        elseif (is_post_type_archive()) :
+        endif;
+        if (is_post_type_archive()) :
             $templates[] = $post_type . '.archive.twig';
         elseif (is_singular()) :
             $templates[] = $post_type . '.single.twig';
-        elseif (is_author()) :
-            $templates[] = 'author.twig';
         elseif (is_archive()) :
             $templates[] = 'archive.twig';
         endif;

@@ -90,6 +90,10 @@ class Init
                 ] + $config);
         });
 
+        add_action('admin_enqueue_scripts', function () {
+            wp_enqueue_style('oxboot/admin-custom.css', get_template_directory_uri().'/public/css/admin.css');
+        });
+
         add_filter('template_include', function ($template) {
             $template = str_replace(
                 [THEME, BASE . 'wp-content' . DS, '.php'],

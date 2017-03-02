@@ -8,5 +8,5 @@ elixir.extend('vendor', function() {
 });
 
 elixir(function(mix) {
-  mix.vendor().sass('./assets/scss/main.scss').webpack('./assets/js/main.js');
+  mix.vendor().sass('./assets/scss/main.scss').sass('./assets/scss/admin.scss').webpack('./assets/js/main.js');
 });

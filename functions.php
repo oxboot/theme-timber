@@ -37,3 +37,14 @@ if (!file_exists($composer = __DIR__.'/vendor/autoload.php')) {
 require_once $composer;
 
 new Init();
+new CustomPostTypes();
+
+add_filter('template_include', function ($template) {
+    $template = str_replace(
+        [THEME, BASE . 'wp-content' . DS, '.php'],
+        ['', '', '.twig'],
+        str_replace(DIRECTORY_SEPARATOR, DS, $template)
+    );
+    new Template($template == 'index.twig' ? null : $template);
+    return get_theme_file_path('index.php');
+});

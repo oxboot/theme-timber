@@ -3,6 +3,7 @@
 namespace Oxboot;
 
 use Timber\Timber;
+use Timber\Post;
 use Timber\Menu;
 
 class Template
@@ -20,11 +21,11 @@ class Template
         /**
          * Timber compilation
          */
-        $template_engine = new Timber();
-        $context = $template_engine::get_context();
-        $post_type = get_post_type();
-        $context['posts'] = $template_engine::get_posts();
-        $context['pagination'] = $template_engine::get_pagination();
+        $post = new Post();
+        $timber = new Timber();
+        $context = $timber::get_context();
+        $context['posts'] = $timber::get_posts();
+        $context['pagination'] = $timber::get_pagination();
         foreach (get_nav_menu_locations() as $menu_location => $menu_id) {
             $context['menu_' . $menu_location ] = new Menu($menu_id);
         }
@@ -40,13 +41,14 @@ class Template
             $templates[] = 'front-page.twig';
         endif;
         if (is_post_type_archive()) :
-            $templates[] = $post_type . '.archive.twig';
+            $templates[] = $post->post_type . '.archive.twig';
         elseif (is_singular()) :
-            $templates[] = $post_type . '.single.twig';
+            $templates[] = $post->post_name . '.' . $post->post_type . '.single.twig';
+            $templates[] = $post->post_type . '.single.twig';
         elseif (is_archive()) :
             $templates[] = 'archive.twig';
         endif;
         $templates[] = 'index.twig';
-        $template_engine::render($templates, $context);
+        $timber::render($templates, $context);
     }
 }

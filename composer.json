@@ -14,6 +14,7 @@
     }
   },
   "require": {
-    "timber/timber": "^1.1"
+    "timber/timber": "^1.1",
+    "oxboot/cpt": "dev-master"
   }
 }

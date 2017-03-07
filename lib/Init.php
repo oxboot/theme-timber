@@ -93,15 +93,5 @@ class Init
         add_action('admin_enqueue_scripts', function () {
             wp_enqueue_style('oxboot/admin-custom.css', get_template_directory_uri().'/public/css/admin.css');
         });
-
-        add_filter('template_include', function ($template) {
-            $template = str_replace(
-                [THEME, BASE . 'wp-content' . DS, '.php'],
-                ['', '', '.twig'],
-                str_replace(DIRECTORY_SEPARATOR, DS, $template)
-            );
-            new Template($template == 'index.twig' ? null : $template);
-            return get_theme_file_path('index.php');
-        });
     }
 }
